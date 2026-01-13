@@ -1,1 +1,0 @@
-print('hello everyone,\nwelcome to my github repo')
