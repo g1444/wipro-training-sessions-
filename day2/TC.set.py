@@ -14,5 +14,5 @@ g={3,4,5,56,6,7,87,8}
 print(f|g)
 # set intersection
 print(f&g)
-
+# checking if element exist in set
 print(2 in f)

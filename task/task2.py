@@ -16,3 +16,14 @@ def perform_square_root(num):
         return "Square root of a negative number is undefined."
     except Exception as e:
         return f"An err occurred: {e}"
+    
+try:
+    num1 = float(input())
+    num2 = float(input())
+    num = float(input())
+except Exception as e:
+    print(f"An err occurred: {e}")
+    exit()
+
+print(perform_division(num1, num2))
+print(perform_square_root(num))

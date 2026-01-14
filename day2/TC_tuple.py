@@ -6,3 +6,13 @@ print(ut[2:4])
 # except changing elements everything else from list functions are possible those are count and index methods
 
 print(t.count(30))
+# can be used to swap the values
+a=33
+b=55
+a,b=b,a
+print(a,b)
+
+# packing and unpacking 
+data=(10,20,30)
+a,b,c=data
+print(a,b,c)
