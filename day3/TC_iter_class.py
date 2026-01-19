@@ -1,5 +1,5 @@
-for x in [12,2,4,5]:
-    print(x)
+# for x in [12,2,4,5]:
+    # print(x)
 
 class count:
     def __init__(self,limit):

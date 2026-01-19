@@ -5,3 +5,4 @@ class employee:
     def __del__(self):
         print("deleted")
 e=employee("dinesh")
+# multiple constructors in python is not allowed

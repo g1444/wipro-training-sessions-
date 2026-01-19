@@ -1,6 +1,6 @@
 s="helo world"
 t="hello everyone"
-# printing a certain char ina string with index
+# printing a certain char in a string with index
 print(s[2],s[3],s[-3],s[1])
 
 print(s)
@@ -10,7 +10,7 @@ print(s.find("el"))
 print(s.split())
 # string slicing 
 print(s[3:-1])
-# string spiliting 
+# string skipping 
 print(s[3:-1:2])
 # string 
 print(s.upper())
