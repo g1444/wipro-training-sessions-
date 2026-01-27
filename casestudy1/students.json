@@ -1,14 +1,38 @@
 [
     {
-        "id": "S101",
-        "name": "Ananya Sharma",
-        "department": "Computer Science",
-        "average": 86.6
+        "id": "1",
+        "name": "gowtham",
+        "department": "It",
+        "semester": 3,
+        "marks": [
+            77,
+            88
+        ],
+        "average": 82.5,
+        "grade": "A"
     },
     {
-        "id": "S102",
-        "name": "Rohan Verma",
-        "department": "Computer Science",
-        "average": 74.0
+        "id": "2",
+        "name": "pratik",
+        "department": "IT",
+        "semester": 3,
+        "marks": [
+            74,
+            75
+        ],
+        "average": 74.5,
+        "grade": "B"
+    },
+    {
+        "id": "3",
+        "name": "harsha",
+        "department": "IT",
+        "semester": 3,
+        "marks": [
+            89,
+            78
+        ],
+        "average": 83.5,
+        "grade": "A"
     }
 ]
