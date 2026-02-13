@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alert Handling Practice</title>
+    <style>
+        h2{
+            color: white;
+        }
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px 15px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+
+    <script>
+        function simpleAlert() {
+            alert("This is a simple alert");
+        }
+
+        function confirmAlert() {
+            let result = confirm("Do you want to proceed?");
+            document.getElementById("result").innerText =
+                result ? "You clicked OK" : "You clicked Cancel";
+        }
+
+        function promptAlert() {
+            let name = prompt("Enter your name:");
+            if (name !== null) {
+                document.getElementById("result").innerText =
+                    "Hello, " + name;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Handling Alerts & Pop-ups</h2>
+
+    <button id="alertBtn" onclick="simpleAlert()">Trigger Alert</button><br>
+
+    <button id="confirmBtn" onclick="confirmAlert()">Trigger Confirm</button><br>
+
+    <button id="promptBtn" onclick="promptAlert()">Trigger Prompt</button>
+
+    <div id="result"></div>
+
+</body>
+</html>

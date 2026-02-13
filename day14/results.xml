@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-02-02T11:50:32.761718" rpa="false" schemaversion="5">
+<suite id="s1" name="TC flask" source="G:\codes\wipro training\day14\TC_flask.robot">
+<test id="s1-t1" name="Verify get user" line="10">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T11:50:33.033063" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${Base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T11:50:33.033063" elapsed="0.001000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T11:50:33.038124" level="INFO">GET Request : url=http://127.0.0.1:5000/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T11:50:33.038124" level="INFO">GET Response : url=http://127.0.0.1:5000/users 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.9', 'Date': 'Mon, 02 Feb 2026 06:20:33 GMT', 'Content-Type': 'application/json', 'Content-Length': '90', 'Connection': 'close'} 
+ body=[
+  {
+    "id": 1,
+    "name": "gowtham"
+  },
+  {
+    "id": 2,
+    "name": "harsha"
+  }
+]
+ 
+ </msg>
+<msg time="2026-02-02T11:50:33.038124" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T11:50:33.034063" elapsed="0.004061"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T11:50:33.039124" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T11:50:33.040125" level="INFO">[{'id': 1, 'name': 'gowtham'}, {'id': 2, 'name': 'harsha'}]</msg>
+<arg>${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T11:50:33.039124" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2026-02-02T11:50:33.032063" elapsed="0.008062"/>
+</test>
+<status status="PASS" start="2026-02-02T11:50:32.762719" elapsed="0.277406"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC flask" id="s1" pass="1" fail="0" skip="0">TC flask</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,47 @@
+{"level":30,"time":"2026-01-29T08:49:28.815Z","pid":8428,"hostname":"gowthams-pc","msg":"Listening on 127.0.0.1:58184"}
+{"level":30,"time":"2026-01-29T08:49:28.865Z","pid":8428,"hostname":"gowthams-pc","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2026-01-29T08:49:29.038Z","pid":8428,"hostname":"gowthams-pc","msg":"Adding browser to stack: chromium, version: 143.0.7499.4"}
+{"level":30,"time":"2026-01-29T08:49:29.039Z","pid":8428,"hostname":"gowthams-pc","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2026-01-29T08:49:29.039Z","pid":8428,"hostname":"gowthams-pc","msg":"End of node method newBrowser"}
+{"level":30,"time":"2026-01-29T08:49:29.046Z","pid":8428,"hostname":"gowthams-pc","msg":"Start of node method newPage"}
+{"level":30,"time":"2026-01-29T08:49:29.046Z","pid":8428,"hostname":"gowthams-pc","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@bb373237df9c95b9b4744fc855f3e2f9\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=6456c21d-7c60-4924-9dd2-44276b547908\"}"}
+{"level":30,"time":"2026-01-29T08:49:29.060Z","pid":8428,"hostname":"gowthams-pc","msg":"Setting default timeout for context context=c1b2c2db-059f-4c59-8660-272f80e2cf84 to 10000"}
+{"level":30,"time":"2026-01-29T08:49:29.060Z","pid":8428,"hostname":"gowthams-pc","msg":"Changed active context: context=c1b2c2db-059f-4c59-8660-272f80e2cf84"}
+{"level":30,"time":"2026-01-29T08:49:29.168Z","pid":8428,"hostname":"gowthams-pc","msg":"Video path: undefined"}
+{"level":30,"time":"2026-01-29T08:49:29.168Z","pid":8428,"hostname":"gowthams-pc","msg":"Changed active page"}
+{"level":30,"time":"2026-01-29T08:49:29.892Z","pid":8428,"hostname":"gowthams-pc","msg":"End of node method newPage"}
+{"level":30,"time":"2026-01-29T08:49:29.908Z","pid":8428,"hostname":"gowthams-pc","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2026-01-29T08:49:29.919Z","pid":8428,"hostname":"gowthams-pc","msg":"Removed page=0ca454e9-a2bc-42ed-8fa3-c730f2ece35f from context=c1b2c2db-059f-4c59-8660-272f80e2cf84 page stack"}
+{"level":30,"time":"2026-01-29T08:49:30.091Z","pid":8428,"hostname":"gowthams-pc","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (G:\py\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (G:\py\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (G:\py\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (G:\py\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (G:\py\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (G:\py\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (G:\py\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+=============================================================
+{"level":30,"time":"2026-01-29T08:49:30.101Z","pid":8428,"hostname":"gowthams-pc","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-01-29T08:49:30.101Z","pid":8428,"hostname":"gowthams-pc","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (G:\py\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (G:\py\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (G:\py\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (G:\py\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (G:\py\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (G:\py\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (G:\py\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at ServerHttp2Stream.emit (node:events:520:35)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+=============================================================
+{"level":30,"time":"2026-01-29T08:49:30.110Z","pid":8428,"hostname":"gowthams-pc","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2026-01-29T08:49:30.110Z","pid":8428,"hostname":"gowthams-pc","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2026-01-29T08:49:30.755Z","pid":8428,"hostname":"gowthams-pc","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2026-01-29T08:49:30.755Z","pid":8428,"hostname":"gowthams-pc","msg":"End of node method closeAllBrowsers"}

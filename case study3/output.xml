@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-02-09T14:03:30.546190" rpa="false" schemaversion="5">
+<suite id="s1" name="Hospital" source="G:\codes\wipro training\case study\hospital.robot">
+<kw name="Setup hospital api" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-09T14:03:30.684026" level="INFO">Creating Session using : alias=hospital, url=http://127.0.0.1:5001, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>hospital</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-09T14:03:30.684026" elapsed="0.000992"/>
+</kw>
+<status status="PASS" start="2026-02-09T14:03:30.684026" elapsed="0.000992"/>
+</kw>
+<test id="s1-t1" name="get all patients" line="20">
+<kw name="Get all patients">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-09T14:03:30.689529" level="INFO">GET Request : url=http://127.0.0.1:5001/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-09T14:03:30.689529" level="INFO">GET Response : url=http://127.0.0.1:5001/ 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.9', 'Date': 'Mon, 09 Feb 2026 08:33:30 GMT', 'Content-Type': 'application/json', 'Content-Length': '372', 'Connection': 'close'} 
+ body=[
+  {
+    "age": 25,
+    "contact": "9876543210",
+    "disease": "Fever",
+    "doctor_assigned": "Dr. Sharma",
+    "gender": "Male",
+    "id": 1,
+    "patient_name": "Ravi Kumar"
+  },
+  {
+    "age": 32,
+    "contact": "9123456780",
+    "disease": "Diabetes",
+    "doctor_assigned": "Dr. Priya",
+    "gender": "Female",
+    "id": 2,
+    "patient_name": "Anitha Devi"
+  }
+]
+ 
+ </msg>
+<msg time="2026-02-09T14:03:30.689529" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>hospital</arg>
+<arg>url=/</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-09T14:03:30.685018" elapsed="0.004511"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2026-02-09T14:03:30.689529" elapsed="0.001410"/>
+</return>
+<msg time="2026-02-09T14:03:30.690939" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<status status="PASS" start="2026-02-09T14:03:30.685018" elapsed="0.005921"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${resp}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-09T14:03:30.690939" elapsed="0.000589"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-09T14:03:30.691528" level="INFO">[{'age': 25, 'contact': '9876543210', 'disease': 'Fever', 'doctor_assigned': 'Dr. Sharma', 'gender': 'Male', 'id': 1, 'patient_name': 'Ravi Kumar'}, {'age': 32, 'contact': '9123456780', 'disease': 'Diabetes', 'doctor_assigned': 'Dr. Priya', 'gender': 'Female', 'id': 2, 'patient_name': 'Anitha Devi'}]</msg>
+<arg>${resp.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-09T14:03:30.691528" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2026-02-09T14:03:30.685018" elapsed="0.007510"/>
+</test>
+<kw name="Teardown hospital api" type="TEARDOWN">
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2026-02-09T14:03:30.692528" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2026-02-09T14:03:30.692528" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-09T14:03:30.692528" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2026-02-09T14:03:30.547195" elapsed="0.146334"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Hospital" id="s1" pass="1" fail="0" skip="0">Hospital</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

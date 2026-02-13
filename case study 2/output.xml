@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-02-04T22:58:21.394970" rpa="false" schemaversion="5">
+<suite id="s1" name="Movie" source="G:\codes\wipro training\case study 2\movie.robot">
+<kw name="Setup movie api" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-04T22:58:21.672453" level="INFO">Creating Session using : alias=movie, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>movie</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-04T22:58:21.672453" elapsed="0.001019"/>
+</kw>
+<status status="PASS" start="2026-02-04T22:58:21.672453" elapsed="0.001019"/>
+</kw>
+<test id="s1-t1" name="get all movies" line="44">
+<kw name="Get all movies">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-04T22:58:21.677750" level="INFO">GET Request : url=http://127.0.0.1:5000/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-04T22:58:21.678995" level="INFO">GET Response : url=http://127.0.0.1:5000/ 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.9', 'Date': 'Wed, 04 Feb 2026 17:28:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '247', 'Connection': 'close'} 
+ body=[
+  {
+    "duration": "2h 49m",
+    "id": 1,
+    "language": "English",
+    "movie_name": "Interstellar",
+    "price": 250
+  },
+  {
+    "duration": "2h 35m",
+    "id": 2,
+    "language": "Tamil",
+    "movie_name": "Jailer",
+    "price": 200
+  }
+]
+ 
+ </msg>
+<msg time="2026-02-04T22:58:21.678995" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>movie</arg>
+<arg>url=/</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.674471" elapsed="0.004524"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2026-02-04T22:58:21.678995" elapsed="0.000000"/>
+</return>
+<msg time="2026-02-04T22:58:21.678995" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<status status="PASS" start="2026-02-04T22:58:21.673472" elapsed="0.005523"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${resp}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.679989" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-04T22:58:21.680993" level="INFO">[{'duration': '2h 49m', 'id': 1, 'language': 'English', 'movie_name': 'Interstellar', 'price': 250}, {'duration': '2h 35m', 'id': 2, 'language': 'Tamil', 'movie_name': 'Jailer', 'price': 200}]</msg>
+<arg>${resp.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.679989" elapsed="0.001004"/>
+</kw>
+<status status="PASS" start="2026-02-04T22:58:21.673472" elapsed="0.007521"/>
+</test>
+<test id="s1-t2" name="add new movie" line="49">
+<kw name="Add new movie">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-04T22:58:21.682984" level="INFO">&amp;{data} = { movie_name:your name=duration:1hr 48m | language:japanese=price:220 }</msg>
+<var>&amp;{data}</var>
+<arg>movie_name:${movie_name}</arg>
+<arg>duration:${duration}</arg>
+<arg>language:${language}</arg>
+<arg>price:${price}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.681991" elapsed="0.000993"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-04T22:58:21.687019" level="INFO">POST Request : url=http://127.0.0.1:5000/movies 
+ path_url=/movies 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '78', 'Content-Type': 'application/json'} 
+ body=b'{"movie_name:your name": "duration:1hr 48m", "language:japanese": "price:220"}' 
+ </msg>
+<msg time="2026-02-04T22:58:21.687019" level="INFO">POST Response : url=http://127.0.0.1:5000/movies 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.9', 'Date': 'Wed, 04 Feb 2026 17:28:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '93', 'Connection': 'close'} 
+ body={
+  "duration": null,
+  "id": 3,
+  "language": null,
+  "movie_name": null,
+  "price": null
+}
+ 
+ </msg>
+<msg time="2026-02-04T22:58:21.687019" level="INFO">${resp} = &lt;Response [201]&gt;</msg>
+<var>${resp}</var>
+<arg>movie</arg>
+<arg>url=/movies</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.683991" elapsed="0.003028"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2026-02-04T22:58:21.687019" elapsed="0.000000"/>
+</return>
+<msg time="2026-02-04T22:58:21.687019" level="INFO">${resp} = &lt;Response [201]&gt;</msg>
+<var>${resp}</var>
+<arg>your name</arg>
+<arg>1hr 48m</arg>
+<arg>japanese</arg>
+<arg>220</arg>
+<status status="PASS" start="2026-02-04T22:58:21.681991" elapsed="0.005028"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${resp}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.688031" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-04T22:58:21.689054" level="INFO">{'duration': None, 'id': 3, 'language': None, 'movie_name': None, 'price': None}</msg>
+<arg>${resp.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.688031" elapsed="0.001023"/>
+</kw>
+<status status="PASS" start="2026-02-04T22:58:21.680993" elapsed="0.008567"/>
+</test>
+<test id="s1-t3" name="new booking" line="53">
+<kw name="booking">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-04T22:58:21.690576" level="INFO">&amp;{data} = { movie_id=2 | tickets=2 | customer=gowtham }</msg>
+<var>&amp;{data}</var>
+<arg>movie_id=${movie_id}</arg>
+<arg>tickets=${tickets}</arg>
+<arg>customer=${customer}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.690576" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-04T22:58:21.693576" level="INFO">POST Request : url=http://127.0.0.1:5000/bookings 
+ path_url=/bookings 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '56', 'Content-Type': 'application/json'} 
+ body=b'{"movie_id": "2", "tickets": "2", "customer": "gowtham"}' 
+ </msg>
+<msg time="2026-02-04T22:58:21.694573" level="INFO">POST Response : url=http://127.0.0.1:5000/bookings 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.9', 'Date': 'Wed, 04 Feb 2026 17:28:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '337', 'Connection': 'close'} 
+ body={
+  "booking": {
+    "customer": "gowtham",
+    "movie_id": "2",
+    "tickets": "2"
+  },
+  "price": 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222,
+  "status": "Booking successful"
+}
+ 
+ </msg>
+<msg time="2026-02-04T22:58:21.694573" level="INFO">${resp} = &lt;Response [201]&gt;</msg>
+<var>${resp}</var>
+<arg>movie</arg>
+<arg>url=/bookings</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.690576" elapsed="0.003997"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2026-02-04T22:58:21.694573" elapsed="0.000000"/>
+</return>
+<msg time="2026-02-04T22:58:21.694573" level="INFO">${resp} = &lt;Response [201]&gt;</msg>
+<var>${resp}</var>
+<arg>2</arg>
+<arg>2</arg>
+<arg>gowtham</arg>
+<status status="PASS" start="2026-02-04T22:58:21.689560" elapsed="0.005013"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${resp}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.694573" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-04T22:58:21.696109" level="INFO">{'booking': {'customer': 'gowtham', 'movie_id': '2', 'tickets': '2'}, 'price': 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222, 'status': 'Booking successful'}</msg>
+<arg>${resp.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-04T22:58:21.696109" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-04T22:58:21.689560" elapsed="0.007555"/>
+</test>
+<kw name="Teardown movie api" type="TEARDOWN">
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2026-02-04T22:58:21.697907" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2026-02-04T22:58:21.697907" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-04T22:58:21.697115" elapsed="0.000792"/>
+</kw>
+<status status="PASS" start="2026-02-04T22:58:21.397023" elapsed="0.300884"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Movie" id="s1" pass="3" fail="0" skip="0">Movie</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

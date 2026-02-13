@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-02-02T10:53:54.142201" rpa="false" schemaversion="5">
+<suite id="s1" name="TC If ELSEIF ELSE" source="G:\codes\wipro training\day14\TC_If_ELSEIF_ELSE.robot">
+<test id="s1-t1" name="using if else if and else" line="2">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-02T10:53:54.176589" level="INFO">${marks} = 78</msg>
+<var>${marks}</var>
+<arg>78</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-02T10:53:54.176589" elapsed="0.001513"/>
+</kw>
+<if>
+<branch type="IF" condition="${marks} &gt;= 80">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Grade a</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-02-02T10:53:54.178102" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T10:53:54.178102" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="${marks} &gt;= 70">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Grade b</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T10:53:54.178102" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-02-02T10:53:54.178102" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Grade c</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-02-02T10:53:54.178102" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-02-02T10:53:54.178102" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-02-02T10:53:54.178102" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2026-02-02T10:53:54.176589" elapsed="0.002543"/>
+</test>
+<status status="PASS" start="2026-02-02T10:53:54.143200" elapsed="0.035932"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC If ELSEIF ELSE" id="s1" pass="1" fail="0" skip="0">TC If ELSEIF ELSE</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

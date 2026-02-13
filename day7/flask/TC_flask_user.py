@@ -45,7 +45,7 @@ def delete_user(user_id):
     for u in users:
         if u["id"]==user_id:
             users.remove(u)
-            return jsonify({"message":"user removed"}),200
+            return jsonify({"message":"user removed"}),201
         
     return jsonify({"message": "user not found"}),404
 if __name__=="__main__":

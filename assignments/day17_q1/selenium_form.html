@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selenium Practice Form</title>
+</head>
+<body>
+
+<h2>Selenium Web Controls Practice</h2>
+
+<form id="testForm">
+
+    <!-- Text Boxes -->
+    <label>Username:</label>
+    <input type="text" id="username"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <!-- Radio Buttons -->
+    <label>Gender:</label>
+    <input type="radio" name="gender" id="male"> Male
+    <input type="radio" name="gender" id="female"> Female<br><br>
+
+    <!-- Checkboxes -->
+    <label>Skills:</label>
+    <input type="checkbox" id="python"> Python
+    <input type="checkbox" id="java"> Java<br><br>
+
+    <!-- Dropdown -->
+    <label>Country:</label>
+    <select id="country">
+        <option value="">Select</option>
+        <option value="india">India</option>
+        <option value="usa">USA</option>
+        <option value="uk">UK</option>
+    </select><br><br>
+
+    <!-- Submit -->
+    <button type="submit" id="submitBtn">Submit</button>
+
+</form>
+
+<p id="message" style="color:green; display:none;">
+    Form submitted successfully!
+</p>
+
+<script>
+document.getElementById("testForm").onsubmit = function(e) {
+    e.preventDefault();
+    document.getElementById("message").style.display = "block";
+};
+</script>
+
+</body>
+</html>

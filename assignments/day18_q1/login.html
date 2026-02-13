@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Login Page</title>
+</head>
+<body>
+
+    <h2 id="title">Login Page</h2>
+
+    <form id="loginForm">
+        <label>Username:</label>
+        <input type="text" name="username" id="username"><br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" id="password"><br><br>
+
+        <button type="submit" id="loginBtn">Login</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            document.getElementById("result").innerText = "Login Successful";
+        });
+    </script>
+
+</body>
+</html>

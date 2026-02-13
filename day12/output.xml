@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-01-29T16:54:51.699979" rpa="false" schemaversion="5">
+<suite id="s1" name="Basics" source="G:\codes\wipro training\day12\basics.robot">
+<test id="s1-t1" name="Test Case 1 - Logging Messages" line="10">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:54:51.730081" level="INFO">Hello world</msg>
+<arg>Hello world</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:54:51.730081" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Running test case 1</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:54:51.731076" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:54:51.731076" level="INFO">Welcome Gowtham</msg>
+<arg>Welcome ${Name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:54:51.731076" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:54:51.729073" elapsed="0.003003"/>
+</test>
+<test id="s1-t2" name="Test Case 2 - variables" line="15">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nrunning test case 2</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:54:51.732076" elapsed="0.001000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:54:51.733076" level="INFO">First friend is vishal1</msg>
+<arg>First friend is ${Friends}[2]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:54:51.733076" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T16:54:51.733076" level="INFO">all friends are ['varsha', 'vinoliya', 'vishal1', 'vishal2']</msg>
+<arg>all friends are @{Friends}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T16:54:51.733076" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-29T16:54:51.732076" elapsed="0.002190"/>
+</test>
+<status status="PASS" start="2026-01-29T16:54:51.700984" elapsed="0.033282"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Basics" id="s1" pass="2" fail="0" skip="0">Basics</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

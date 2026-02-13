@@ -13,3 +13,5 @@ def count_up(n):
         yield i
 for val in count_up(4):
     print(val)
+
+count_up(21)

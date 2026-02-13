@@ -1,3 +1,26 @@
 {
     "python.REPL.enableREPLSmartSend": false
+    
 }
+{
+    "editor.cursorStyle": "line"
+}
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Robot DataDriver Suite",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "-m",
+        "robot",
+        "--outputdir",
+        "results",
+        "TC_arg_xlsx.robot"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
+

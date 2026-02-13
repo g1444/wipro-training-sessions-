@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-01-30T11:42:01.341384" rpa="false" schemaversion="5">
+<suite id="s1" name="TC arg xlsx" source="G:\codes\wipro training\day13\TC_arg_xlsx.robot">
+<test id="s1-t1" name="Login With Data" line="26">
+<status status="FAIL" start="2026-01-30T11:42:02.146538" elapsed="0.000000">Test cannot be empty.</status>
+</test>
+<status status="FAIL" start="2026-01-30T11:42:01.367173" elapsed="0.780364"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC arg xlsx" id="s1" pass="0" fail="1" skip="0">TC arg xlsx</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-01-30T11:42:02.144089" level="ERROR">[ DataDriver ] Error in robot file:
+  File "G:\codes\wipro training\day13\TC_arg_xlsx.robot", line 0</msg>
+<msg time="2026-01-30T11:42:02.144089" level="ERROR">In source file:
+  File "testdata.xlsx", line 0</msg>
+<msg time="2026-01-30T11:42:02.145552" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: ValueError: Unassigned requiered argument detected: ${username}.</msg>
+</errors>
+</robot>

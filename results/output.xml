@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-02-09T14:45:20.831425" rpa="false" schemaversion="5">
+<suite id="s1" name="Wipro Training" source="G:\codes\wipro training">
+<suite id="s1-s1" name="Case Study" source="G:\codes\wipro training\case study">
+<suite id="s1-s1-s1" name="Hospital" source="G:\codes\wipro training\case study\hospital.robot">
+<kw name="Setup hospital api" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-09T14:45:20.993631" level="INFO">Creating Session using : alias=hospital, url=http://127.0.0.1:5001, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>hospital</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-09T14:45:20.993631" elapsed="0.000999"/>
+</kw>
+<status status="PASS" start="2026-02-09T14:45:20.992631" elapsed="0.001999"/>
+</kw>
+<test id="s1-s1-s1-t1" name="posting patient" line="42">
+<kw name="Add patients">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-09T14:45:20.998156" level="INFO">&amp;{data} = { patient_name:gowtham=age:21 | gender:male=contact:7095602721 | disease:brokenheart=doctor_assigned:varsha }</msg>
+<var>&amp;{data}</var>
+<arg>patient_name:${patient_name}</arg>
+<arg>age:${age}</arg>
+<arg>gender:${gender}</arg>
+<arg>contact:${contact}</arg>
+<arg>disease:${disease}</arg>
+<arg>doctor_assigned:${doctor_asssigned}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-09T14:45:20.997632" elapsed="0.000524"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-09T14:45:21.003157" level="INFO">POST Request : url=http://127.0.0.1:5001/patients 
+ path_url=/patients 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '120', 'Content-Type': 'application/json'} 
+ body=b'{"patient_name:gowtham": "age:21", "gender:male": "contact:7095602721", "disease:brokenheart": "doctor_assigned:varsha"}' 
+ </msg>
+<msg time="2026-02-09T14:45:21.003157" level="INFO">POST Response : url=http://127.0.0.1:5001/patients 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.12.9', 'Date': 'Mon, 09 Feb 2026 09:15:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '145', 'Connection': 'close'} 
+ body={
+  "age": null,
+  "contact": null,
+  "disease": null,
+  "doctor_assigned": null,
+  "gender": null,
+  "id": 2,
+  "patient_name": "Anitha Devi"
+}
+ 
+ </msg>
+<msg time="2026-02-09T14:45:21.004162" level="INFO">${resp} = &lt;Response [201]&gt;</msg>
+<var>${resp}</var>
+<arg>hospital</arg>
+<arg>url=/patients</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-09T14:45:20.998156" elapsed="0.006006"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2026-02-09T14:45:21.004162" elapsed="0.000000"/>
+</return>
+<msg time="2026-02-09T14:45:21.005158" level="INFO">${resp} = &lt;Response [201]&gt;</msg>
+<var>${resp}</var>
+<arg>gowtham</arg>
+<arg>21</arg>
+<arg>male</arg>
+<arg>7095602721</arg>
+<arg>brokenheart</arg>
+<arg>varsha</arg>
+<status status="PASS" start="2026-02-09T14:45:20.996630" elapsed="0.008528"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${resp}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-09T14:45:21.005158" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-09T14:45:21.006667" level="INFO">{'age': None, 'contact': None, 'disease': None, 'doctor_assigned': None, 'gender': None, 'id': 2, 'patient_name': 'Anitha Devi'}</msg>
+<arg>${resp.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-09T14:45:21.005158" elapsed="0.001509"/>
+</kw>
+<status status="PASS" start="2026-02-09T14:45:20.994630" elapsed="0.012037"/>
+</test>
+<kw name="Teardown hospital api" type="TEARDOWN">
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2026-02-09T14:45:21.016683" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2026-02-09T14:45:21.015681" elapsed="0.001002"/>
+</kw>
+<status status="PASS" start="2026-02-09T14:45:21.015681" elapsed="0.001002"/>
+</kw>
+<status status="PASS" start="2026-02-09T14:45:20.872554" elapsed="0.144129"/>
+</suite>
+<status status="PASS" start="2026-02-09T14:45:20.868548" elapsed="0.150535"/>
+</suite>
+<status status="PASS" start="2026-02-09T14:45:20.838833" elapsed="0.188758"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Wipro Training" id="s1" pass="1" fail="0" skip="0">Wipro Training</stat>
+<stat name="Case Study" id="s1-s1" pass="1" fail="0" skip="0">Wipro Training.Case Study</stat>
+<stat name="Hospital" id="s1-s1-s1" pass="1" fail="0" skip="0">Wipro Training.Case Study.Hospital</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

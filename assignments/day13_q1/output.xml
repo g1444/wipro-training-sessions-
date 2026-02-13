@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-01-30T19:52:26.860571" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="G:\codes\wipro training\assignments\day13_q1\test.robot">
+<test id="s1-t1" name="Execute Data Driven Login" line="7">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2026-01-30T19:52:26.908865" level="INFO" html="true">Getting file '&lt;a href="file://G:\codes\wipro training\assignments\day13_q1\data.csv"&gt;G:\codes\wipro training\assignments\day13_q1\data.csv&lt;/a&gt;'.</msg>
+<msg time="2026-01-30T19:52:26.908865" level="INFO">${file_content} = ${username},${password}
+admin,admin123
+user1,pass123
+invalid,invalid</msg>
+<var>${file_content}</var>
+<arg>data.csv</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">4 lines returned.</msg>
+<msg time="2026-01-30T19:52:26.908865" level="INFO">@{lines} = [ ${username},${password} | admin,admin123 | user1,pass123 | invalid,invalid ]</msg>
+<var>@{lines}</var>
+<arg>${file_content}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Split String" owner="String">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">${username} = ${username}</msg>
+<msg time="2026-01-30T19:52:26.908865" level="INFO">${password} = ${password}</msg>
+<var>${username}</var>
+<var>${password}</var>
+<arg>${line}</arg>
+<arg>separator=,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Login Workflow Template">
+<kw name="Open Login Page">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Navigating to Login UI...</msg>
+<arg>Navigating to Login UI...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Credentials">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Entering Username: ${username}</msg>
+<arg>Entering Username: ${uname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Entering Password: ${password}</msg>
+<arg>Entering Password: ${pword}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Results">
+<if>
+<branch type="IF" condition="'${uname}' == 'invalid'">
+<kw name="Fail" owner="BuiltIn">
+<arg>Invalid credentials detected for: ${uname}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Login successful for ${username}</msg>
+<arg>Login successful for ${uname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</if>
+<arg>${username}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log" owner="BuiltIn">
+<arg>Row failed for ${username}: ${error}</arg>
+<arg>level=WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</try>
+<var name="${line}">${username},${password}</var>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Split String" owner="String">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">${username} = admin</msg>
+<msg time="2026-01-30T19:52:26.908865" level="INFO">${password} = admin123</msg>
+<var>${username}</var>
+<var>${password}</var>
+<arg>${line}</arg>
+<arg>separator=,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Login Workflow Template">
+<kw name="Open Login Page">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Navigating to Login UI...</msg>
+<arg>Navigating to Login UI...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Credentials">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Entering Username: admin</msg>
+<arg>Entering Username: ${uname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Entering Password: admin123</msg>
+<arg>Entering Password: ${pword}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Results">
+<if>
+<branch type="IF" condition="'${uname}' == 'invalid'">
+<kw name="Fail" owner="BuiltIn">
+<arg>Invalid credentials detected for: ${uname}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Login successful for admin</msg>
+<arg>Login successful for ${uname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</if>
+<arg>${username}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log" owner="BuiltIn">
+<arg>Row failed for ${username}: ${error}</arg>
+<arg>level=WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</try>
+<var name="${line}">admin,admin123</var>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Split String" owner="String">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">${username} = user1</msg>
+<msg time="2026-01-30T19:52:26.908865" level="INFO">${password} = pass123</msg>
+<var>${username}</var>
+<var>${password}</var>
+<arg>${line}</arg>
+<arg>separator=,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Login Workflow Template">
+<kw name="Open Login Page">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Navigating to Login UI...</msg>
+<arg>Navigating to Login UI...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Credentials">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Entering Username: user1</msg>
+<arg>Entering Username: ${uname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Entering Password: pass123</msg>
+<arg>Entering Password: ${pword}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Results">
+<if>
+<branch type="IF" condition="'${uname}' == 'invalid'">
+<kw name="Fail" owner="BuiltIn">
+<arg>Invalid credentials detected for: ${uname}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Login successful for user1</msg>
+<arg>Login successful for ${uname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</if>
+<arg>${username}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log" owner="BuiltIn">
+<arg>Row failed for ${username}: ${error}</arg>
+<arg>level=WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</try>
+<var name="${line}">user1,pass123</var>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Split String" owner="String">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">${username} = invalid</msg>
+<msg time="2026-01-30T19:52:26.908865" level="INFO">${password} = invalid</msg>
+<var>${username}</var>
+<var>${password}</var>
+<arg>${line}</arg>
+<arg>separator=,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Login Workflow Template">
+<kw name="Open Login Page">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Navigating to Login UI...</msg>
+<arg>Navigating to Login UI...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Credentials">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Entering Username: invalid</msg>
+<arg>Entering Username: ${uname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="INFO">Entering Password: invalid</msg>
+<arg>Entering Password: ${pword}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Results">
+<if>
+<branch type="IF" condition="'${uname}' == 'invalid'">
+<kw name="Fail" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="FAIL">Invalid credentials detected for: invalid</msg>
+<arg>Invalid credentials detected for: ${uname}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2026-01-30T19:52:26.908865" elapsed="0.000000">Invalid credentials detected for: invalid</status>
+</kw>
+<status status="FAIL" start="2026-01-30T19:52:26.908865" elapsed="0.000000">Invalid credentials detected for: invalid</status>
+</branch>
+<branch type="ELSE">
+<kw name="Log" owner="BuiltIn">
+<arg>Login successful for ${uname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<status status="FAIL" start="2026-01-30T19:52:26.908865" elapsed="0.000000">Invalid credentials detected for: invalid</status>
+</if>
+<arg>${username}</arg>
+<status status="FAIL" start="2026-01-30T19:52:26.908865" elapsed="0.000000">Invalid credentials detected for: invalid</status>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="FAIL" start="2026-01-30T19:52:26.908865" elapsed="0.000000">Invalid credentials detected for: invalid</status>
+</kw>
+<status status="FAIL" start="2026-01-30T19:52:26.908865" elapsed="0.000000">Invalid credentials detected for: invalid</status>
+</branch>
+<branch type="EXCEPT" assign="${error}">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:52:26.908865" level="WARN">Row failed for invalid: Invalid credentials detected for: invalid</msg>
+<arg>Row failed for ${username}: ${error}</arg>
+<arg>level=WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</try>
+<var name="${line}">invalid,invalid</var>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</iter>
+<var>${line}</var>
+<value>@{lines}</value>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</for>
+<status status="PASS" start="2026-01-30T19:52:26.908865" elapsed="0.000000"/>
+</test>
+<status status="PASS" start="2026-01-30T19:52:26.860571" elapsed="0.048294"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="1" fail="0" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-01-30T19:52:26.908865" level="WARN">Row failed for invalid: Invalid credentials detected for: invalid</msg>
+</errors>
+</robot>

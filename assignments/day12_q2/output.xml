@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-01-30T19:06:12.804439" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="G:\codes\wipro training\assignments\day12_q2\test.robot">
+<test id="s1-t1" name="Verify Environment Setup" line="8">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>==============================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:06:12.999799" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Starting Environment Check</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:06:12.999799" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>==============================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:06:12.999799" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Check Python Installed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:06:12.999799" level="INFO">Checking Python installation...</msg>
+<arg>Checking Python installation...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:06:12.999799" elapsed="0.000000"/>
+</kw>
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-30T19:06:12.999799" level="INFO">Starting process:
+python --version</msg>
+<msg time="2026-01-30T19:06:12.999799" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-30T19:06:13.014397" level="INFO">Process completed.</msg>
+<msg time="2026-01-30T19:06:13.014397" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<var>${result}</var>
+<arg>python</arg>
+<arg>--version</arg>
+<arg>stdout=TRUE</arg>
+<arg>stderr=TRUE</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-30T19:06:12.999799" elapsed="0.014598"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>Python</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.014397" elapsed="0.002558"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Python Installed: ${result.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.016955" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:06:12.999799" elapsed="0.017156"/>
+</kw>
+<arg>Check Python Installed</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-30T19:06:12.999799" elapsed="0.017156"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Check Robot Installed">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:06:13.024686" level="INFO">Checking Robot Framework installation...</msg>
+<arg>Checking Robot Framework installation...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.024686" elapsed="0.000000"/>
+</kw>
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-30T19:06:13.025515" level="INFO">Starting process:
+robot --version</msg>
+<msg time="2026-01-30T19:06:13.028960" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-30T19:06:13.310810" level="INFO">Process completed.</msg>
+<msg time="2026-01-30T19:06:13.310810" level="INFO">${result} = &lt;result object with rc 251&gt;</msg>
+<var>${result}</var>
+<arg>robot</arg>
+<arg>--version</arg>
+<arg>stdout=TRUE</arg>
+<arg>stderr=TRUE</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.024686" elapsed="0.286124"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result.stdout}</arg>
+<arg>Robot Framework</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.310810" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Installed: ${result.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.310810" elapsed="0.012230"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:06:13.024686" elapsed="0.298354"/>
+</kw>
+<arg>Check Robot Installed</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.024686" elapsed="0.298354"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Print Robot Version">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:06:13.323040" level="INFO">Printing Robot Framework Version...</msg>
+<arg>Printing Robot Framework Version...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.323040" elapsed="0.000000"/>
+</kw>
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-30T19:06:13.323040" level="INFO">Starting process:
+robot --version</msg>
+<msg time="2026-01-30T19:06:13.323040" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-30T19:06:13.664319" level="INFO">Process completed.</msg>
+<msg time="2026-01-30T19:06:13.664319" level="INFO">${result} = &lt;result object with rc 251&gt;</msg>
+<var>${result}</var>
+<arg>robot</arg>
+<arg>--version</arg>
+<arg>stdout=TRUE</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.323040" elapsed="0.341279"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework Version: ${result.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.664319" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:06:13.323040" elapsed="0.341279"/>
+</kw>
+<arg>Print Robot Version</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.323040" elapsed="0.341279"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>==============================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.664319" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Environment Verification Done</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.664319" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>==============================</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:06:13.664319" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:06:12.999799" elapsed="0.664520"/>
+</test>
+<status status="PASS" start="2026-01-30T19:06:12.810264" elapsed="0.854055"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="1" fail="0" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

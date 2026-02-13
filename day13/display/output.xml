@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-01-30T11:19:00.501234" rpa="false" schemaversion="5">
+<suite id="s1" name="TC argument" source="G:\codes\wipro training\day13\TC_argument.robot">
+<test id="s1-t1" name="argument" line="20">
+<kw name="opening orangehrm in edge">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T11:19:00.711133" level="INFO">Opening browser 'edge' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-30T11:19:00.711133" elapsed="8.278150"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-30T11:19:08.989283" elapsed="0.020558"/>
+</kw>
+<status status="PASS" start="2026-01-30T11:19:00.710133" elapsed="8.299708"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-30T11:19:13.011110" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-30T11:19:09.010844" elapsed="4.000266"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-30T11:19:13.098136" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="beforelogin.png"&gt;&lt;img src="beforelogin.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${OUTPUT_DIR}/beforelogin.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-30T11:19:13.011110" elapsed="0.088026"/>
+</kw>
+<kw name="login orangehrm">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T11:19:13.100135" level="INFO">Typing text 'Admin' into text field 'name:username'.</msg>
+<arg>name:username</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T11:19:13.099136" elapsed="0.057975"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T11:19:13.157111" level="INFO">Typing text 'admin123' into text field 'name:password'.</msg>
+<arg>name:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T11:19:13.157111" elapsed="0.055624"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-30T11:19:13.212735" level="INFO">Clicking button 'xpath://button[@type="submit"]'.</msg>
+<arg>xpath://button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T11:19:13.212735" elapsed="7.422283"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-30T11:19:23.635509" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-30T11:19:20.635018" elapsed="3.000491"/>
+</kw>
+<arg>Admin</arg>
+<arg>admin123</arg>
+<status status="PASS" start="2026-01-30T11:19:13.099136" elapsed="10.536373"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-01-30T11:19:26.635783" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-01-30T11:19:23.635509" elapsed="3.000274"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-01-30T11:19:26.757877" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="afterlogin.png"&gt;&lt;img src="afterlogin.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${OUTPUT DIR}/afterlogin.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-01-30T11:19:26.635783" elapsed="0.122094"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-01-30T11:19:26.757877" elapsed="2.172954"/>
+</kw>
+<status status="PASS" start="2026-01-30T11:19:00.710133" elapsed="28.220698"/>
+</test>
+<status status="PASS" start="2026-01-30T11:19:00.502741" elapsed="28.429081"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC argument" id="s1" pass="1" fail="0" skip="0">TC argument</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

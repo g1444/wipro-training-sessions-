@@ -1,0 +1,185 @@
+{
+  "id": "a7017eed-461b-48fc-8f90-2a00f3da1bda",
+  "version": "2.0",
+  "name": "pro 1",
+  "url": "https://example.com",
+  "tests": [{
+    "id": "aa93ac14-3662-485d-989e-52546a6c19aa",
+    "name": "test1",
+    "commands": [{
+      "id": "e21aa040-9a7e-4c8d-be2b-cd2ae48c0c0a",
+      "comment": "",
+      "command": "open",
+      "target": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/logout",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "406eec8a-d4a2-482b-bb9a-dd9a58842f44",
+      "comment": "",
+      "command": "open",
+      "target": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a138e187-0653-4480-a5ea-511aca3adc4f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1096",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "373ecd96-ba47-47a0-8a04-56b37fa80153",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.oxd-input--focus", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/div[2]/div[2]/form/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a2384ee-1146-438e-854a-dd51baa4570b",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.oxd-input--focus", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/div[2]/div[2]/form/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Admin"
+    }, {
+      "id": "d722912a-7987-47b2-92cf-e7e35e8d915a",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.oxd-input--focus", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/div[2]/div[2]/form/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5eb241b3-81ed-40c1-af0f-77baa8c64ef4",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.oxd-input--focus", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/div[2]/div[2]/form/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "admin123"
+    }, {
+      "id": "f342197a-3906-43e2-af7b-89cc793143f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.oxd-button",
+      "targets": [
+        ["css=.oxd-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div/div/div/div[2]/div[2]/form/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "23b1e8b5-53ae-4d3b-8fb1-146d7973fddc",
+      "comment": "",
+      "command": "pause",
+      "target": "10000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "47fb3c1c-f078-43e9-b108-d3597a68b2eb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.oxd-userdropdown-tab",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ebc9b64-551c-4eca-af4e-9bcb9788815a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Logout",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5e57ce71-1aea-426f-b798-06429fad9da2",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "79e948cd-2a79-45ab-a088-9cd6031315c0",
+    "name": "TEST 2",
+    "commands": []
+  }, {
+    "id": "c25b9d62-7ce3-4608-a728-1d7f85734bbb",
+    "name": "test2",
+    "commands": [{
+      "id": "f77a9bc7-e2aa-44e1-b55a-3282eb9e8c9e",
+      "comment": "",
+      "command": "open",
+      "target": "https://example.com",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f418990-ada0-4031-a743-7503999d83b8",
+      "comment": "",
+      "command": "storeTitle",
+      "target": "return document.title;",
+      "targets": [],
+      "value": "title"
+    }, {
+      "id": "28097672-9402-40e4-9ca5-766c271a4fce",
+      "comment": "",
+      "command": "echo",
+      "target": "${title}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "84250cb7-81e3-4a8c-b28b-ccda67ff1407",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href;",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "e663b056-2db9-4c2f-abdb-511437685b44",
+      "comment": "",
+      "command": "echo",
+      "target": "${url}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a7dca469-5d5e-4e4f-a5f3-74043feb30bc",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "528e211a-be40-4f2d-b17a-ecec28ee13ae",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["aa93ac14-3662-485d-989e-52546a6c19aa"]
+  }],
+  "urls": ["https://opensource-demo.orangehrmlive.com/web/index.php/auth/login", "https://example.com/"],
+  "plugins": []
+}

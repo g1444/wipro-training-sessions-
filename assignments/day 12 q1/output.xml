@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.12.9 on win32)" generated="2026-01-30T19:02:20.630470" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="G:\codes\wipro training\assignments\day 12 q1\test.robot">
+<test id="s1-t1" name="Test Case 1 - Simple Logging" line="11">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:02:20.661169" level="INFO">Hello Gowtham, welcome to Robot Framework Testing</msg>
+<arg>Hello ${NAME}, welcome to ${COURSE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:02:20.661169" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Running Test Case 1 Successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:02:20.661169" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${NAME}</arg>
+<arg>Gowtham</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-01-30T19:02:20.661169" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:02:20.661169" elapsed="0.000000"/>
+</test>
+<test id="s1-t2" name="Test Case 2 - List Variable Demo" line="17">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-30T19:02:20.661169" level="INFO">Friends list is: ['Varsha', 'Vinoliya', 'Harsha', 'Vishal']</msg>
+<arg>Friends list is: @{FRIENDS}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-30T19:02:20.661169" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>First friend is ${FRIENDS}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:02:20.661169" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${FRIENDS}</arg>
+<arg>Varsha</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-01-30T19:02:20.661169" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Test Case 2 Completed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-30T19:02:20.661169" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-01-30T19:02:20.661169" elapsed="0.000000"/>
+</test>
+<status status="PASS" start="2026-01-30T19:02:20.630470" elapsed="0.030699"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="2" fail="0" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
